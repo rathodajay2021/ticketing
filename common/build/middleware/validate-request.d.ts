@@ -1,0 +1,2 @@
+import { type Request, type Response, type NextFunction } from "express";
+export declare const validateRequest: (req: Request, res: Response, next: NextFunction) => void;

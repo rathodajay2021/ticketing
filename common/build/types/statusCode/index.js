@@ -1,0 +1,73 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HttpStatus = void 0;
+var HttpStatus;
+(function (HttpStatus) {
+    // Informational
+    HttpStatus[HttpStatus["Continue"] = 100] = "Continue";
+    HttpStatus[HttpStatus["SwitchingProtocols"] = 101] = "SwitchingProtocols";
+    HttpStatus[HttpStatus["Processing"] = 102] = "Processing";
+    HttpStatus[HttpStatus["EarlyHints"] = 103] = "EarlyHints";
+    // Successful
+    HttpStatus[HttpStatus["OK"] = 200] = "OK";
+    HttpStatus[HttpStatus["Created"] = 201] = "Created";
+    HttpStatus[HttpStatus["Accepted"] = 202] = "Accepted";
+    HttpStatus[HttpStatus["NonAuthoritativeInformation"] = 203] = "NonAuthoritativeInformation";
+    HttpStatus[HttpStatus["NoContent"] = 204] = "NoContent";
+    HttpStatus[HttpStatus["ResetContent"] = 205] = "ResetContent";
+    HttpStatus[HttpStatus["PartialContent"] = 206] = "PartialContent";
+    HttpStatus[HttpStatus["MultiStatus"] = 207] = "MultiStatus";
+    HttpStatus[HttpStatus["AlreadyReported"] = 208] = "AlreadyReported";
+    HttpStatus[HttpStatus["IMUsed"] = 226] = "IMUsed";
+    // Redirection
+    HttpStatus[HttpStatus["MultipleChoices"] = 300] = "MultipleChoices";
+    HttpStatus[HttpStatus["MovedPermanently"] = 301] = "MovedPermanently";
+    HttpStatus[HttpStatus["Found"] = 302] = "Found";
+    HttpStatus[HttpStatus["SeeOther"] = 303] = "SeeOther";
+    HttpStatus[HttpStatus["NotModified"] = 304] = "NotModified";
+    HttpStatus[HttpStatus["UseProxy"] = 305] = "UseProxy";
+    HttpStatus[HttpStatus["TemporaryRedirect"] = 307] = "TemporaryRedirect";
+    HttpStatus[HttpStatus["PermanentRedirect"] = 308] = "PermanentRedirect";
+    // Client Errors
+    HttpStatus[HttpStatus["BadRequest"] = 400] = "BadRequest";
+    HttpStatus[HttpStatus["Unauthorized"] = 401] = "Unauthorized";
+    HttpStatus[HttpStatus["PaymentRequired"] = 402] = "PaymentRequired";
+    HttpStatus[HttpStatus["Forbidden"] = 403] = "Forbidden";
+    HttpStatus[HttpStatus["NotFound"] = 404] = "NotFound";
+    HttpStatus[HttpStatus["MethodNotAllowed"] = 405] = "MethodNotAllowed";
+    HttpStatus[HttpStatus["NotAcceptable"] = 406] = "NotAcceptable";
+    HttpStatus[HttpStatus["ProxyAuthenticationRequired"] = 407] = "ProxyAuthenticationRequired";
+    HttpStatus[HttpStatus["RequestTimeout"] = 408] = "RequestTimeout";
+    HttpStatus[HttpStatus["Conflict"] = 409] = "Conflict";
+    HttpStatus[HttpStatus["Gone"] = 410] = "Gone";
+    HttpStatus[HttpStatus["LengthRequired"] = 411] = "LengthRequired";
+    HttpStatus[HttpStatus["PreconditionFailed"] = 412] = "PreconditionFailed";
+    HttpStatus[HttpStatus["ContentTooLarge"] = 413] = "ContentTooLarge";
+    HttpStatus[HttpStatus["URITooLong"] = 414] = "URITooLong";
+    HttpStatus[HttpStatus["UnsupportedMediaType"] = 415] = "UnsupportedMediaType";
+    HttpStatus[HttpStatus["RangeNotSatisfiable"] = 416] = "RangeNotSatisfiable";
+    HttpStatus[HttpStatus["ExpectationFailed"] = 417] = "ExpectationFailed";
+    HttpStatus[HttpStatus["ImATeapot"] = 418] = "ImATeapot";
+    HttpStatus[HttpStatus["MisdirectedRequest"] = 421] = "MisdirectedRequest";
+    HttpStatus[HttpStatus["UnprocessableContent"] = 422] = "UnprocessableContent";
+    HttpStatus[HttpStatus["Locked"] = 423] = "Locked";
+    HttpStatus[HttpStatus["FailedDependency"] = 424] = "FailedDependency";
+    HttpStatus[HttpStatus["TooEarly"] = 425] = "TooEarly";
+    HttpStatus[HttpStatus["UpgradeRequired"] = 426] = "UpgradeRequired";
+    HttpStatus[HttpStatus["PreconditionRequired"] = 428] = "PreconditionRequired";
+    HttpStatus[HttpStatus["TooManyRequests"] = 429] = "TooManyRequests";
+    HttpStatus[HttpStatus["RequestHeaderFieldsTooLarge"] = 431] = "RequestHeaderFieldsTooLarge";
+    HttpStatus[HttpStatus["UnavailableForLegalReasons"] = 451] = "UnavailableForLegalReasons";
+    // Server Errors
+    HttpStatus[HttpStatus["InternalServerError"] = 500] = "InternalServerError";
+    HttpStatus[HttpStatus["NotImplemented"] = 501] = "NotImplemented";
+    HttpStatus[HttpStatus["BadGateway"] = 502] = "BadGateway";
+    HttpStatus[HttpStatus["ServiceUnavailable"] = 503] = "ServiceUnavailable";
+    HttpStatus[HttpStatus["GatewayTimeout"] = 504] = "GatewayTimeout";
+    HttpStatus[HttpStatus["HTTPVersionNotSupported"] = 505] = "HTTPVersionNotSupported";
+    HttpStatus[HttpStatus["VariantAlsoNegotiates"] = 506] = "VariantAlsoNegotiates";
+    HttpStatus[HttpStatus["InsufficientStorage"] = 507] = "InsufficientStorage";
+    HttpStatus[HttpStatus["LoopDetected"] = 508] = "LoopDetected";
+    HttpStatus[HttpStatus["NotExtended"] = 510] = "NotExtended";
+    HttpStatus[HttpStatus["NetworkAuthenticationRequired"] = 511] = "NetworkAuthenticationRequired";
+})(HttpStatus || (exports.HttpStatus = HttpStatus = {}));

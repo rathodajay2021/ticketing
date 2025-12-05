@@ -1,0 +1,43 @@
+{
+  "name": "@articketing2021/common",
+  "version": "1.0.19",
+  "description": "Common reusable utilities, middlewares, and types for Articketing microservices.",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "clean": "del-cli ./build/*",
+    "build": "pnpm clean && tsc && tsc-alias",
+    "pub": "pnpm version patch && pnpm build && pnpm publish",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/index.ts"
+  },
+  "keywords": [
+    "common",
+    "typescript",
+    "express",
+    "microservices",
+    "articketing"
+  ],
+  "author": "Ajay Rathod",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cookie-session": "^2.0.49",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "del-cli": "^7.0.0",
+    "mongoose": "^9.0.0",
+    "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.8.9",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "cookie-session": "^2.1.1",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "node-nats-streaming": "^0.3.2"
+  }
+}
