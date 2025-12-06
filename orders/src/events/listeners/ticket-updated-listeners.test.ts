@@ -13,9 +13,9 @@ const setup = async () => {
   // create and save a ticket
   const ticket = Ticket.build({
     id: new mongoose.Types.ObjectId(),
-    title: 'title',
+    title: "title",
     price: 20,
-  })
+  });
   await ticket.save();
 
   // create a fake data object
@@ -38,21 +38,30 @@ const setup = async () => {
 };
 
 it("finds, updates, and saves a ticket", async () => {
-    const { listener, data, msg, ticket } = await setup();
-    
-    await listener.onMessage(data, msg);
+  const { listener, data, msg, ticket } = await setup();
 
-    const updatedTicket = await Ticket.findById(ticket.id);
+  await listener.onMessage(data, msg);
 
-    expect(updatedTicket!.title).toEqual(data.title);
-    expect(updatedTicket!.price).toEqual(data.price);
-    expect(updatedTicket!.version).toEqual(data.version);
+  const updatedTicket = await Ticket.findById(ticket.id);
+
+  expect(updatedTicket!.title).toEqual(data.title);
+  expect(updatedTicket!.price).toEqual(data.price);
+  expect(updatedTicket!.version).toEqual(data.version);
 });
 
 it("test message acknowledgement", async () => {
-    const { listener, data, msg } = await setup();
-    
-    await listener.onMessage(data, msg);
+  const { listener, data, msg } = await setup();
 
-    expect(msg.ack).toHaveBeenCalled();
+  await listener.onMessage(data, msg);
+
+  expect(msg.ack).toHaveBeenCalled();
+});
+
+it("it does not call ack if the event has a skipped version number", async () => {
+  const { listener, data, msg, ticket } = await setup();
+
+  try {
+    await listener.onMessage({ ...data, version: data.version + 1 }, msg);
+  } catch (error) {}
+  expect(msg.ack).not.toHaveBeenCalled();
 });

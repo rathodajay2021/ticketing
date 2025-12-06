@@ -171,22 +171,27 @@ describe("get orders - get request /api/orders", () => {
 describe("get order by id - get request /api/orders/:orderId", () => {
   describe("basic route test", () => {
     it("has a route handler listing to /api/orders for post request", async () => {
-      const response = await request(app).get("/api/orders/:orderId").send({});
+      const response = await request(app)
+        .get(`/api/orders/${new mongoose.Types.ObjectId()}`)
+        .send({});
 
       expect(response.status).not.toEqual(HttpStatus.NotFound);
     });
 
     it("can only be access if the user is signed in", async () => {
-      await request(app).get("/api/orders/:orderId").send({}).expect(401);
+      await request(app)
+        .get(`/api/orders/${new mongoose.Types.ObjectId()}`)
+        .send({})
+        .expect(HttpStatus.Unauthorized);
     });
 
     it("returns status other than 401 if the user is signed in", async () => {
       const response = await request(app)
-        .get("/api/orders/:orderId")
+        .get(`/api/orders/${new mongoose.Types.ObjectId()}`)
         .set("Cookie", signup())
         .send({});
 
-      expect(response).not.toEqual(401);
+      expect(response).not.toEqual(HttpStatus.Unauthorized);
     });
   });
 
@@ -243,19 +248,22 @@ describe("delete order by id - delete request /api/orders/:orderId", () => {
   describe("basic route test", () => {
     it("has a route handler listing to /api/orders for post request", async () => {
       const response = await request(app)
-        .delete("/api/orders/:orderId")
+        .delete(`/api/orders/${new mongoose.Types.ObjectId()}`)
         .send({});
 
       expect(response.status).not.toEqual(HttpStatus.NotFound);
     });
 
     it("can only be access if the user is signed in", async () => {
-      await request(app).delete("/api/orders/:orderId").send({}).expect(401);
+      await request(app)
+        .delete(`/api/orders/${new mongoose.Types.ObjectId()}`)
+        .send({})
+        .expect(HttpStatus.Unauthorized);
     });
 
     it("returns status other than 401 if the user is signed in", async () => {
       const response = await request(app)
-        .delete("/api/orders/:orderId")
+        .delete(`/api/orders/${new mongoose.Types.ObjectId()}`)
         .set("Cookie", signup())
         .send({});
 

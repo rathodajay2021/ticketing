@@ -22,6 +22,7 @@ export class OrdersController {
 
       res.send(orders);
     } catch (error) {
+      console.log("🚀 ~ OrdersController ~ getOrders ~ error:", error);
       next(error);
     }
   }
@@ -36,6 +37,7 @@ export class OrdersController {
 
       res.send(order);
     } catch (error) {
+      console.log("🚀 ~ OrdersController ~ getOrder ~ error:", error);
       next(error);
     }
   }
@@ -54,7 +56,7 @@ export class OrdersController {
 
       const expiration = new Date();
       expiration.setSeconds(
-        expiration.getSeconds() + EXPIRATION_WINDOW_SECONDS,
+        expiration.getSeconds() + EXPIRATION_WINDOW_SECONDS
       );
 
       if (!req.currentUser?.id) throw new NotAuthorizedError();
@@ -108,6 +110,7 @@ export class OrdersController {
 
       res.status(HttpStatus.NoContent).send();
     } catch (error) {
+      console.log("🚀 ~ OrdersController ~ deleteOrder ~ error:", error);
       next(error);
     }
   }
