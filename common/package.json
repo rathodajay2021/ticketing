@@ -1,6 +1,6 @@
 {
   "name": "@articketing2021/common",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Common reusable utilities, middlewares, and types for Articketing microservices.",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
